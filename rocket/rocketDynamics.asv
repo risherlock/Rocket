@@ -1,5 +1,0 @@
-function [state_dot] = rocketDynamics(~,state,thrust_vectors)
-% Rishav (2020/9/8)
-
-% 
-end
