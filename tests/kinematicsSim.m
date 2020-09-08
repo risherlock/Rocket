@@ -18,9 +18,8 @@ state(:,1) = ypr;
 
 % RK4 loop
 for t = 1:length(time)-1
-  fn = @(t,y)eulerKinematics(t,y,omegas);
+  fn = @(t,y)rocketRotationalKinematics(t,y,omegas);
   state(:,t+1) = RK4(fn,state(:,t),dt,t);
-  
 end
 
 % Plot
