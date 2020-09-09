@@ -1,4 +1,4 @@
-function [acceleration] = rocketTranslationalKinetics(~,velovity,omega,F_a,F_g,F_p)
+function [acceleration] = rocketTranslationalKinetics(~,velocity,omega,F_a,F_g,F_p)
 %%% Compute the translational acceleration of the rocket
 %
 % Source:
@@ -12,6 +12,6 @@ function [acceleration] = rocketTranslationalKinetics(~,velovity,omega,F_a,F_g,F
 
 %%% Translational Dynamics differential equation
 acc_inertial = (F_a + F_p + F_g)/m; % In inertial frame
-acc_body = acc_inertial - cross(omega,velovity); % Transport theorem
+acc_body = acc_inertial - cross(omega,velocity); % Transport theorem
 acceleration = acc_body; 
 end
