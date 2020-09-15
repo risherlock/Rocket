@@ -27,5 +27,5 @@ euler_matrix = (1/c2) * [0   s3     c3;
                          c2  s3*s2  c3*s2];
                      
 % Kinematics differential equation  
-ypr_dot = euler_matrix * omegas;
+ypr_dot = euler_matrix*omegas;
 end
