@@ -8,7 +8,7 @@ function [ypr_dot] = rocketRotationalKinematics(~,ypr,omegas)
 % Outputs:
 %   ypr_dot = Derivatives of orientation
 %
-% Rishav (2020)
+% 2020
     
 % yaw, pitch, roll
 % y = ypr(1);
