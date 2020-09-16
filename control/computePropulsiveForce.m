@@ -1,5 +1,5 @@
 function [F_p] = computePropulsiveForce(Fp,gimble_state)
-% Rishav (2020/9/8)
+% 2020/9/8 
 
 % Unpack gimble angles (radians)
 mu_1 = gimble_state(1);
