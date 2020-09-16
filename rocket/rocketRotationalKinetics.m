@@ -1,6 +1,6 @@
 function [state_dot] =  rocketRotationalKinetics(~,omegas,tau)
 %%% Rigid body rotational dynamics implementation
-% Rishav (2020/6/14)
+% 2020/6/14
 
 w = omegas; % Angular velocities of satellite
 rocket = configRocket;
