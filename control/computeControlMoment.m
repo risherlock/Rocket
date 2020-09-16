@@ -1,5 +1,5 @@
 function [tau] = computeControlMoment(thrust,gimble_state)
-% Rishav (2020/9/8)    
+% 2020/9/8    
 
 % Access rocket params
 rocket = configRocket;
