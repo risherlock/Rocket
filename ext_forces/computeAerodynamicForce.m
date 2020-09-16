@@ -1,6 +1,6 @@
 function [F_a] = computeAerodynamicForce(velocity,area,rho)
 %%% Computes aerodynamic force in body frame
-% Rishav (2020/9/10)
+% 2020/9/10
 
 aero = configRocket; % Access rocket config
 Ca = aero.Ca; % Axial force coefficient
