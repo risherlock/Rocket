@@ -8,4 +8,3 @@ set(groot, 'defaultLegendInterprete','latex');
 % Add all subfolders to path
 path = genpath('D:\codes\GitHub\Rocket');
 addpath(path);
-
