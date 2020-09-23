@@ -18,5 +18,6 @@ F_x = -0.5*rho*V^2*Ca*area;
 F_y = 0.5*rho*V^2*Cny*area;
 F_z = 0.5*rho*V^2*Cnz*area;
 
-F_a = [F_x,F_y,F_z]';
+%F_a = [F_x,F_y,F_z]';
+F_a = [0,0,0]';
 end

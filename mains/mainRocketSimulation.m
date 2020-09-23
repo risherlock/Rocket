@@ -7,25 +7,26 @@ close all
 
 fprintf('Simulation in progress...');
 sim = configSimulation; % Access simulation params
-time  = sim.start_time:sim.dt:sim.stop_time; 
 
 % State vectors
-state = zeros(length(sim.init_state),length(time));
+state = zeros(length(sim.init_state),length(sim.time));
 state(:,1) = sim.init_state;
 
 % Initialise gimble
 gimble_state = sim.init_gimble_state;
 
 % RK4 loop
-for t = 1:length(time)-1 
+for i_iters = 1:length(sim.time)-1 
+  t = sim.time(i_iters);
+    
   % gimble_state = thrustVectorControl(); % Control 
   fn = @(t,y)rocketDynamicalModel(t,y,gimble_state); % Plant
-  state(:,t+1) = RK4(fn,state(:,t),sim.dt,t); % Store states
+  state(:,i_iters+1) = RK4(fn,state(:,i_iters),sim.dt,t); % Store states
 end
 
-plot(time,state(1,:)); hold on;
-plot(time,state(2,:)); hold on;
-plot(time,state(3,:)); hold on;
+plot(sim.time,state(7,:)); hold on;
+plot(sim.time,state(8,:)); hold on;
+plot(sim.time,state(9,:)); hold on;
 
 clc; 
 fprintf('Simulation complete... \n');
