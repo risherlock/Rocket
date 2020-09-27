@@ -14,7 +14,7 @@ rho = 1;
 m_dot = 5;
 
 % Compute force and moments (In body frame)
-Fp = computePropulsiveForce(m_dot,gimble_state);
+Fp = computePropulsiveForce(t,gimble_state);
 Fg = computeGravitationalForce(mass,position,ypr);
 Fa = computeAerodynamicForce(velocity,area,rho);
 tau = computeControlMoment(thrust,gimble_state);

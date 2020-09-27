@@ -29,4 +29,4 @@ plot(time,state(3,:));
 legend('Roll','Pitch','Yaw');
 xlabel('Time');
 ylabel('Orientation');
-title('Simple Pendulum');
+title('State');

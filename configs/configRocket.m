@@ -2,6 +2,7 @@ function rocket = configRocket()
 %%% Physical configurations of rocket
 % 2020/9/15
 
+
 rocket.I = diag([1,1,1]); % Inertia matrix
 rocket.mass = 20; % Initial mass, kg
 rocket.area = 50; % Ref area for aerodynamic force, m^2
@@ -18,4 +19,6 @@ rocket.Ve = 1; % Absolute velocity of exhaust gases, m/s
 
 rocket.pa = 1; % Ambient atmospheric pressure, Pa
 rocket.rho = 1; % Atmospheric density, kg/m^3 
+
+rocket.motor_thrust = '/configs/Motors/Sugar_motor.csv';
 end
