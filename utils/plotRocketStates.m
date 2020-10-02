@@ -30,7 +30,7 @@ xlabel('time (secs)'); ylabel('m/s');
 legend('x-axis','y-axis','z-axis'); grid on;
 
 figure(6); plot(time,s(13,:),'LineWidth',1.5); % Mass
-title('Mass of rocket in inertial frame');
+title('Mass of rocket');
 xlabel('time (secs)'); ylabel('mass (kg)');
 legend('Mass'); grid on;
 end
