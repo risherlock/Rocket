@@ -4,7 +4,7 @@ function sim = configSimulation()
 
 % Simulation time
 start_time = 0; % sec
-stop_time = 15; % sec
+stop_time = 45; % sec
 sim.dt = 0.01; % sec
 sim.time  = start_time:sim.dt:stop_time; 
 

@@ -8,7 +8,6 @@ position = state(7:9); % Position vector
 velocity = state(10:12); % Translational velocity vector
 mass = state(13); % Instantaneous mass
 
-m_dot = -1;
 
 % Compute force and moments (In body frame)
 [Fp,thrust] = computePropulsiveForce(t,gimble_state);
@@ -21,6 +20,7 @@ ypr_dot = rocketRotationalKinematics(t,ypr,omega);
 omega_dot = rocketRotationalKinetics(t,omega,tau);
 position_dot = velocity;
 velocity_dot = rocketTranslationalKinetics(t,velocity,omega,mass,Fa,Fg,Fp);
+m_dot = computeMassFlowRate(thrust);
 
 state_dot = [ypr_dot',omega_dot',position_dot',velocity_dot',m_dot]';
 end

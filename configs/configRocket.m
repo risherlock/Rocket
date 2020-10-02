@@ -4,7 +4,7 @@ function rocket = configRocket()
 
 
 rocket.I = diag([1,1,1]); % Inertia matrix
-rocket.mass = 20; % Initial mass, kg
+rocket.mass = 25.61054676; % Initial mass, kg
 rocket.area = 50; % Ref area for aerodynamic force, m^2
 
 rocket.Cn = 5; % Axial force coefficient (aero), dimensionless
@@ -21,4 +21,5 @@ rocket.pa = 1; % Ambient atmospheric pressure, Pa
 rocket.rho = 1; % Atmospheric density, kg/m^3 
 
 rocket.motor_thrust = '/configs/Motors/Sugar_motor.csv';
+rocket.motor_sp_impulse = 94.5; 
 end
