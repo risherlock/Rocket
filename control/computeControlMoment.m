@@ -13,5 +13,6 @@ tau_x = 0;
 tau_y = -thrust*rocket.xi*sin(mu_1);
 tau_z = thrust*rocket.xi*cos(mu_1)*sin(mu_2);
 
-tau = [tau_x,tau_y,tau_z]';
+% tau = [tau_x,tau_y,tau_z]';
+tau = [0,0,0]';
 end

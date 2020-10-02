@@ -1,11 +1,10 @@
 %%% Rocket simulation without TVC
 % Rishav (2020/9/7)
-
 clc
 clear 
 close all
 
-fprintf('Simulation in progress...');
+fprintf('Simulation in progress... \n');
 sim = configSimulation; % Access simulation params
 
 % State vectors
@@ -24,9 +23,5 @@ for i_iters = 1:length(sim.time)-1
   state(:,i_iters+1) = RK4(fn,state(:,i_iters),sim.dt,t); % Store states
 end
 
-plot(sim.time,state(7,:)); hold on;
-plot(sim.time,state(8,:)); hold on;
-plot(sim.time,state(9,:)); hold on;
-
-clc; 
-fprintf('Simulation complete... \n');
+plotRocketStates(sim.time,state); 
+clc; fprintf('Simulation complete... \n');

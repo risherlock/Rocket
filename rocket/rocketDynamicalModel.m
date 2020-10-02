@@ -8,15 +8,12 @@ position = state(7:9); % Position vector
 velocity = state(10:12); % Translational velocity vector
 mass = state(13); % Instantaneous mass
 
-thrust = 5000;
-area = 2;
-rho = 1;
-m_dot = 5;
+m_dot = -1;
 
 % Compute force and moments (In body frame)
-Fp = computePropulsiveForce(t,gimble_state);
+[Fp,thrust] = computePropulsiveForce(t,gimble_state);
 Fg = computeGravitationalForce(mass,position,ypr);
-Fa = computeAerodynamicForce(velocity,area,rho);
+Fa = computeAerodynamicForce(position,velocity);
 tau = computeControlMoment(thrust,gimble_state);
 
 % Propagate states
