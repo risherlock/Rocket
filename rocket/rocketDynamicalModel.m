@@ -19,7 +19,7 @@ tau = computeControlMoment(thrust,gimble_state);
 ypr_dot = rocketRotationalKinematics(t,ypr,omega);
 omega_dot = rocketRotationalKinetics(t,omega,tau);
 position_dot = velocity;
-velocity_dot = rocketTranslationalKinetics(t,velocity,omega,mass,Fa,Fg,Fp);
+velocity_dot = rocketTranslationalKinetics(t,ypr,mass,Fa,Fg,Fp);
 m_dot = computeMassFlowRate(thrust);
 
 state_dot = [ypr_dot',omega_dot',position_dot',velocity_dot',m_dot]';
