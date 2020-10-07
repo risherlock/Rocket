@@ -11,7 +11,6 @@ mass = state(13); % Instantaneous mass
 
 % Compute force and moments (In body frame)
 [Fp,thrust] = computePropulsiveForce(t,gimble_state);
-Fg = computeGravitationalForce(mass,position,ypr);
 Fa = computeAerodynamicForce(position,velocity);
 tau = computeControlMoment(thrust,gimble_state);
 
@@ -19,7 +18,9 @@ tau = computeControlMoment(thrust,gimble_state);
 ypr_dot = rocketRotationalKinematics(t,ypr,omega);
 omega_dot = rocketRotationalKinetics(t,omega,tau);
 position_dot = velocity;
-velocity_dot = rocketTranslationalKinetics(t,ypr,mass,Fa,Fg,Fp);
+velocity_dot = rocketTranslationalKinetics(t,ypr,mass,Fa,Fp);
+g = computeAccelerationDueToGravity(position);
+velocity_dot(1) = velocity_dot(1)-g;
 m_dot = computeMassFlowRate(thrust);
 
 state_dot = [ypr_dot',omega_dot',position_dot',velocity_dot',m_dot]';
